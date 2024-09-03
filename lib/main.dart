@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:green_food/components/styled_filled_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,34 +32,40 @@ class MyApp extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Row(children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                          padding: EdgeInsets.fromLTRB(0, 16, 0, 6),
-                          child: Text(
-                            "Quick, Fresh & Delicious",
-                            softWrap: true,
-                            style: TextStyle(color: Colors.white),
-                          )),
-                      Text(
-                        "Made by hand, from scratch, with love. Green food.",
-                        softWrap: true,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ],
-                  )
-                ]),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Image.asset(
+                      "assets/images/sandwich.png",
+                      width: 220,
+                      height: 220,
+                    ),
+                    const Padding(
+                        padding: EdgeInsets.fromLTRB(0, 16, 0, 6),
+                        child: Text(
+                          "Quick,\nFresh & \nDelicious",
+                          softWrap: true,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold,
+                              height: 1.4),
+                        )),
+                    const Text(
+                      "Made by hand, from scratch, with love. Green food.",
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     const Column(
                       children: [],
                     ),
-                    FilledButton(
-                        onPressed: handleRedirectToToLogin,
-                        child: const Text("Get started")),
+                    StyledFilledButton(
+                        title: "Get started",
+                        onPressed: handleRedirectToToLogin)
                   ],
                 )
               ],
