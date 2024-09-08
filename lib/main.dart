@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:green_food/intro/index.dart';
+import 'package:green_food/screens/intro/index.dart';
+import 'package:green_food/screens/auth/index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: defaultColor,
           ),
-          body: const Intro()),
+          body: const Auth()),
     );
   }
 }

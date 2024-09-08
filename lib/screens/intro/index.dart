@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:green_food/intro/widgets/styled_filled_button.dart';
+import 'package:green_food/widgets/styled_filled_button.dart';
+import "package:green_food/widgets/styled_image_card.dart";
 
 class Intro extends StatelessWidget {
   const Intro({super.key});
@@ -15,32 +16,19 @@ class Intro extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
+            const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Card(
-                    margin: EdgeInsets.zero,
-                    color: const Color.fromRGBO(96, 150, 100, 1),
-                    shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(42),
-                            bottomRight: Radius.circular(42))),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 48, horizontal: 52),
-                      child: Image.asset(
-                        "assets/images/sandwich.png",
-                        width: 220,
-                        height: 220,
-                      ),
-                    )),
-                const Padding(
+                StyledImageCard(
+                  imageUrl: "assets/images/sandwich_coffee.png",
+                ),
+                Padding(
                     padding: EdgeInsets.symmetric(vertical: 16, horizontal: 15),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Quick, Fresh & Delicious",
+                          "QUICK, FRESH & DELICIOUS",
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 32,
@@ -60,9 +48,6 @@ class Intro extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Column(
-                    children: [],
-                  ),
                   StyledFilledButton(
                       title: "Get started", onPressed: handleRedirectToToLogin)
                 ],

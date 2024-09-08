@@ -16,9 +16,9 @@ class StyledFilledButton extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(10))),
         ),
         onPressed: onPressed,
-        child: const Text(
-          "Get started",
-          style: TextStyle(
+        child: Text(
+          title,
+          style: const TextStyle(
               color: Color.fromRGBO(41, 41, 41, 1),
               fontWeight: FontWeight.bold,
               fontSize: 16),
