@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:green_food/screens/intro/index.dart';
 import 'package:green_food/screens/auth/index.dart';
 
 void main() {
