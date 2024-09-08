@@ -22,7 +22,7 @@ class StyledFilledButton extends StatelessWidget {
             right: BorderSide(width: 1, color: Color.fromRGBO(36, 70, 39, 1)),
             bottom: BorderSide(width: 1, color: Color.fromRGBO(36, 70, 39, 1)),
           ),
-          borderRadius: BorderRadius.all(Radius.circular(15))),
+          borderRadius: BorderRadius.all(Radius.circular(12))),
       child: FilledButton(
           style: FilledButton.styleFrom(
             minimumSize: const Size.fromHeight(50),
