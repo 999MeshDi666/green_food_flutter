@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:green_food/widgets/styled_headline.dart';
 import 'package:green_food/widgets/styled_image_card.dart';
 import 'package:green_food/widgets/styled_filled_button.dart';
 
@@ -21,16 +22,8 @@ class Auth extends StatelessWidget {
           const Column(
             children: [
               Padding(
-                padding: EdgeInsets.fromLTRB(22, 0, 22, 20),
-                child: Text(
-                  "SIGN IN OR CREATE AN ACCOUNT",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 32,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+                  padding: EdgeInsets.fromLTRB(22, 0, 22, 20),
+                  child: StyledHeadline(text: "SIGN IN OR CREATE AN ACCOUNT")),
               Row(
                 children: [
                   StyledImageCard(imageUrl: "assets/images/sandwich.png")
@@ -39,7 +32,7 @@ class Auth extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 15),
+            padding: const EdgeInsets.fromLTRB(15, 0, 15, 40),
             child: Column(
               children: [
                 Padding(

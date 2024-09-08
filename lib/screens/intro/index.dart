@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:green_food/widgets/styled_filled_button.dart';
-import "package:green_food/widgets/styled_image_card.dart";
+import 'package:green_food/widgets/styled_image_card.dart';
+import 'package:green_food/widgets/styled_headline.dart';
 
 class Intro extends StatelessWidget {
   const Intro({super.key});
@@ -27,14 +28,7 @@ class Intro extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "QUICK, FRESH & DELICIOUS",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 32,
-                              fontWeight: FontWeight.bold,
-                              height: 1.4),
-                        ),
+                        StyledHeadline(text: "QUICK, FRESH & DELICIOUS"),
                         Text(
                           "Made by hand, from scratch, with love. Green food.",
                           style: TextStyle(color: Colors.white, fontSize: 14),
