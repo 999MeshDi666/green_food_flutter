@@ -29,7 +29,9 @@ class _StyledFormState extends State<StyledForm> {
               backgroundColor: const Color.fromRGBO(65, 112, 67, 1),
               color: const Color.fromRGBO(255, 255, 255, 1),
               onPressed: () {
-                print("nav to the main page");
+                if (_formKey.currentState!.validate()) {
+                  print("submitted");
+                }
               },
             ),
           ],

@@ -10,9 +10,9 @@ class StyledImageCard extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           border: Border(
-            left: BorderSide(width: 2, color: Color.fromRGBO(36, 70, 39, 1)),
             top: BorderSide(width: 2, color: Color.fromRGBO(36, 70, 39, 1)),
             right: BorderSide(width: 4, color: Color.fromRGBO(36, 70, 39, 1)),
+            bottom: BorderSide(width: 2, color: Color.fromRGBO(36, 70, 39, 1)),
           ),
           borderRadius: BorderRadius.only(
               topRight: Radius.circular(42), bottomRight: Radius.circular(42))),
