@@ -3,15 +3,39 @@ import 'package:green_food/widgets/styled_headline.dart';
 import 'package:green_food/widgets/styled_image_card.dart';
 import 'package:green_food/widgets/styled_filled_button.dart';
 import 'package:green_food/screens/auth/widgets/styled_bottom_sheet.dart';
+import 'package:green_food/screens/auth/widgets/styled_sing_in_form.dart';
+import 'package:green_food/screens/auth/widgets/styled_create_an_account_form.dart';
 
 class Auth extends StatelessWidget {
   const Auth({super.key});
 
   void handleSignIn(BuildContext context) {
-    showBottomSheet(
+    String title = "Sing in";
+    showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return const StyledBottomSheet();
+        return StyledBottomSheet(
+          childWidget: StyledSignInForm(
+            buttonText: title,
+          ),
+          headlineText: title.toUpperCase(),
+        );
+      },
+      backgroundColor: const Color.fromRGBO(96, 150, 87, 1),
+    );
+  }
+
+  void handleCreateAnAccount(BuildContext context) {
+    String title = "Create an account";
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return StyledBottomSheet(
+          childWidget: StyledCreateAnAccountForm(
+            buttonText: title,
+          ),
+          headlineText: title.toUpperCase(),
+        );
       },
       backgroundColor: const Color.fromRGBO(96, 150, 87, 1),
     );
@@ -55,7 +79,7 @@ class Auth extends StatelessWidget {
                 StyledFilledButton(
                     title: "Create an account",
                     onPressed: () {
-                      print("create an account");
+                      handleCreateAnAccount(context);
                     })
               ],
             ),

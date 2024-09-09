@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:green_food/widgets/styled_filled_button.dart';
 import 'package:green_food/screens/auth/widgets/styled_text_form_field.dart';
 
-class StyledForm extends StatefulWidget {
-  const StyledForm({super.key});
-
+class StyledCreateAnAccountForm extends StatefulWidget {
+  const StyledCreateAnAccountForm({super.key, required this.buttonText});
+  final String buttonText;
   @override
-  State<StyledForm> createState() => _StyledFormState();
+  State<StyledCreateAnAccountForm> createState() =>
+      _StyledCreateAnAccountFormState();
 }
 
-class _StyledFormState extends State<StyledForm> {
+class _StyledCreateAnAccountFormState extends State<StyledCreateAnAccountForm> {
   final _formKey = GlobalKey<FormState>();
 
   @override
@@ -22,10 +23,13 @@ class _StyledFormState extends State<StyledForm> {
               labelText: "username",
             ),
             const StyledTextFormField(
+              labelText: "email",
+            ),
+            const StyledTextFormField(
               labelText: "password",
             ),
             StyledFilledButton(
-              title: "Sign in",
+              title: widget.buttonText,
               backgroundColor: const Color.fromRGBO(65, 112, 67, 1),
               color: const Color.fromRGBO(255, 255, 255, 1),
               onPressed: () {
