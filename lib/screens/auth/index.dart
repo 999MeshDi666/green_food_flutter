@@ -76,11 +76,11 @@ class Auth extends StatelessWidget {
                     },
                   ),
                 ),
-                StyledFilledButton(
-                    title: "Create an account",
-                    onPressed: () {
-                      handleCreateAnAccount(context);
-                    })
+                // StyledFilledButton(
+                //     title: "Create an account",
+                //     onPressed: () {
+                //       handleCreateAnAccount(context);
+                //     })
               ],
             ),
           )

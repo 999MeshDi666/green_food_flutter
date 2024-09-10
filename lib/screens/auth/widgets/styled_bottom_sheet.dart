@@ -16,50 +16,49 @@ class StyledBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        height: 450,
         padding: const EdgeInsets.fromLTRB(15, 15, 15, 40),
         decoration: BoxDecoration(
             border: defaultBorder,
             borderRadius: const BorderRadius.all(Radius.circular(25))),
         child: Center(
-            child: Stack(
-          children: [
-            Positioned(
-              top: -20,
-              child: Container(
-                decoration: const BoxDecoration(),
-                child: Image.asset("assets/images/sandwich_bottom_sheet.png"),
-              ),
-            ),
-            Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        color: Colors.white,
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: Container(
-                            width: 35,
-                            height: 35,
-                            decoration: BoxDecoration(
-                                color: const Color.fromRGBO(65, 112, 67, 1),
-                                border: defaultBorder,
-                                borderRadius:
-                                    const BorderRadius.all(Radius.circular(6))),
-                            child: const Icon(Icons.close)),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton(
+                      color: Colors.white,
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: Container(
+                          width: 35,
+                          height: 35,
+                          decoration: BoxDecoration(
+                              color: const Color.fromRGBO(65, 112, 67, 1),
+                              border: defaultBorder,
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(6))),
+                          child: const Icon(Icons.close)),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Center(
+                        child: Padding(
+                      padding: const EdgeInsets.only(bottom: 28),
+                      child: StyledHeadline(
+                        text: headlineText,
                       ),
-                    ],
-                  ),
-                  Center(
-                    child: StyledHeadline(text: headlineText),
-                  ),
-                  childWidget,
-                ]),
-          ],
-        )));
+                    )),
+                    childWidget,
+                  ],
+                ),
+              ]),
+        ));
   }
 }
