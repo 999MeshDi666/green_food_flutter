@@ -16,8 +16,8 @@ class StyledPriceCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(5),
             ),
             child: Container(
-              width: 140,
-              height: 140,
+              width: 114,
+              height: 110,
               padding: const EdgeInsets.all(5),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -26,13 +26,14 @@ class StyledPriceCard extends StatelessWidget {
                   const Text(
                     'Apple Juice',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   const Text(
                     'Price: \$5.00',
                     style: TextStyle(
+                      fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -56,6 +57,7 @@ class StyledPriceCard extends StatelessWidget {
                                 'ORDER',
                                 style: TextStyle(
                                     color: Colors.white,
+                                    fontSize: 12,
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -68,7 +70,7 @@ class StyledPriceCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: -50,
+          top: -55,
           left: 0,
           right: 0,
           child: Image.asset(
