@@ -15,14 +15,14 @@ class StyledFilledButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-          border: Border(
+      decoration: BoxDecoration(
+          border: const Border(
             left: BorderSide(width: 1, color: Color.fromRGBO(36, 70, 39, 1)),
             top: BorderSide(width: 4, color: Color.fromRGBO(36, 70, 39, 1)),
             right: BorderSide(width: 1, color: Color.fromRGBO(36, 70, 39, 1)),
             bottom: BorderSide(width: 1, color: Color.fromRGBO(36, 70, 39, 1)),
           ),
-          borderRadius: BorderRadius.all(Radius.circular(12))),
+          borderRadius: BorderRadius.circular(12)),
       child: FilledButton(
           style: FilledButton.styleFrom(
             minimumSize: const Size.fromHeight(50),
