@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:green_food/screens/main/widgets/styled_search_bar.dart';
 import 'package:green_food/screens/main/widgets/styled_tab_controller.dart';
+import "package:green_food/screens/main/widgets/styled_price_card_grid.dart";
 
 class StyledMainCardContainer extends StatelessWidget {
   const StyledMainCardContainer({super.key});
@@ -45,10 +46,10 @@ class StyledMainCardContainer extends StatelessWidget {
             child: StyledSearchBar(),
           ),
           const StyledTabController(),
-          // Container(
-          //   margin: const EdgeInsets.only(top: 40),
-          //   child: const StyledPriceCardGrid(),
-          // )
+          Container(
+            margin: const EdgeInsets.only(top: 30),
+            child: const StyledPriceCardGrid(),
+          )
         ],
       ),
     );

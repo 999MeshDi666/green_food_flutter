@@ -7,26 +7,18 @@ class StyledPriceCardGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: 500,
       child: Padding(
           padding: const EdgeInsets.all(0),
-          child: GridView.builder(
-            scrollDirection: Axis.vertical,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, // Number of columns
-              crossAxisSpacing: 10.0,
-              mainAxisSpacing: 10.0,
-              childAspectRatio: 1.0, // Aspect ratio for the grid items
-            ),
-            itemCount: 6, // Number of items
-            itemBuilder: (BuildContext context, int index) {
+          child: GridView.count(
+            crossAxisCount: 2,
+            children: List.generate(6, (index) {
               return Container(
-                padding: const EdgeInsets.only(top: 52),
-                child: const StyledPriceCard(
-                  imageUrl: 'assets/images/apple_juice.png',
-                ),
-              );
-            },
+                  margin: const EdgeInsets.only(top: 60),
+                  child: const StyledPriceCard(
+                    imageUrl: 'assets/images/apple_juice.png',
+                  ));
+            }),
           )),
     );
   }

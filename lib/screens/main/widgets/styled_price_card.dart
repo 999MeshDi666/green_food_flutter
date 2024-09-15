@@ -70,7 +70,7 @@ class StyledPriceCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: -60,
+          top: -65,
           left: 0,
           right: 0,
           child: Image.asset(

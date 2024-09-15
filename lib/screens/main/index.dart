@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:green_food/screens/main/widgets/styled_main_card_contaner.dart';
+import 'package:green_food/screens/main/widgets/styled_main_card_container.dart';
+import "package:green_food/screens/main/widgets/styled_price_card_grid.dart";
 
 class Main extends StatelessWidget {
   const Main({super.key});
@@ -12,7 +13,8 @@ class Main extends StatelessWidget {
       ),
       body: const Column(
         children: [
-          Padding(padding: EdgeInsets.all(15), child: StyledMainCardContainer())
+          Padding(
+              padding: EdgeInsets.all(15), child: StyledMainCardContainer()),
         ],
       ),
     );
