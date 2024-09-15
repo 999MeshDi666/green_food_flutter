@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class StyledHeadline extends StatelessWidget {
   const StyledHeadline({super.key, required this.text, this.fontSize = 32});
@@ -9,11 +10,11 @@ class StyledHeadline extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-          color: Colors.white,
-          fontSize: fontSize,
-          fontWeight: FontWeight.bold,
-          height: 1.4),
+      style: GoogleFonts.openSans(
+        color: Colors.white,
+        fontSize: fontSize,
+        fontWeight: FontWeight.bold,
+      ),
     );
   }
 }
