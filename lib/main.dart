@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:green_food/screens/intro/index.dart';
+import 'package:green_food/screens/main/index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.openSansTextTheme(Theme.of(context).textTheme),
         useMaterial3: true,
       ),
-      home: const Intro(),
+      home: const Main(),
     );
   }
 }
