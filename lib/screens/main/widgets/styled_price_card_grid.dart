@@ -20,9 +20,9 @@ class StyledPriceCardGrid extends StatelessWidget {
             ),
             itemCount: 6, // Number of items
             itemBuilder: (BuildContext context, int index) {
-              return const Padding(
-                padding: EdgeInsets.only(top: 52),
-                child: StyledPriceCard(
+              return Container(
+                padding: const EdgeInsets.only(top: 52),
+                child: const StyledPriceCard(
                   imageUrl: 'assets/images/apple_juice.png',
                 ),
               );
