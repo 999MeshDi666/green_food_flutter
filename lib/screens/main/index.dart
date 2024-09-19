@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:green_food/screens/main/widgets/styled_main_card_container.dart';
-import "package:green_food/screens/main/widgets/styled_price_card_grid.dart";
 
 class Main extends StatelessWidget {
   const Main({super.key});
