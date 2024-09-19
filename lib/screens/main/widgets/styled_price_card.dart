@@ -9,14 +9,14 @@ class StyledPriceCard extends StatelessWidget {
       clipBehavior: Clip.none,
       children: [
         Align(
-          alignment: Alignment.center,
+          alignment: const Alignment(0, 0),
           child: Card(
             elevation: 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5),
             ),
             child: Container(
-              width: 114,
+              width: 120,
               height: 110,
               padding: const EdgeInsets.all(5),
               child: Column(
@@ -70,7 +70,7 @@ class StyledPriceCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: -65,
+          top: -40,
           left: 0,
           right: 0,
           child: Image.asset(

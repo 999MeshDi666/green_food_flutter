@@ -7,15 +7,17 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-      ),
-      body: const Column(
-        children: [
-          Padding(
-              padding: EdgeInsets.all(15), child: StyledMainCardContainer()),
-        ],
-      ),
-    );
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+        ),
+        body: const SingleChildScrollView(
+          child: Column(
+            children: [
+              Padding(
+                  padding: EdgeInsets.all(15),
+                  child: StyledMainCardContainer()),
+            ],
+          ),
+        ));
   }
 }

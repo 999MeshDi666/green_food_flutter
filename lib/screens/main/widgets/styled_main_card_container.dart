@@ -46,10 +46,7 @@ class StyledMainCardContainer extends StatelessWidget {
             child: StyledSearchBar(),
           ),
           const StyledTabController(),
-          Container(
-            margin: const EdgeInsets.only(top: 30),
-            child: const StyledPriceCardGrid(),
-          )
+          const StyledPriceCardGrid(),
         ],
       ),
     );
