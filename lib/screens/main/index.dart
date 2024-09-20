@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:green_food/screens/main/widgets/styled_main_card_container.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:green_food/widgets/icons/icons.dart';
 
 class Main extends StatelessWidget {
   const Main({super.key});
@@ -30,16 +32,18 @@ class Main extends StatelessWidget {
                     borderRadius: defaultBorderRadius),
                 child: Row(
                   children: [
-                    Container(
-                      width: 80,
-                      height: 80,
-                      decoration: BoxDecoration(
-                          color: const Color.fromRGBO(96, 150, 87, 1),
-                          border: Border.all(
-                              width: 1,
-                              color: const Color.fromRGBO(36, 70, 39, 1)),
-                          borderRadius: BorderRadius.circular(50)),
-                      child: Image.asset("assets/images/user.png"),
+                    SizedBox(
+                      width: 70,
+                      height: 70,
+                      // decoration: BoxDecoration(
+                      //     color: const Color.fromRGBO(96, 150, 87, 1),
+                      //     border: Border.all(
+                      //         width: 1,
+                      //         color: const Color.fromRGBO(36, 70, 39, 1)),
+                      //     borderRadius: BorderRadius.circular(50)),
+                      child: SvgPicture.string(
+                        svgUser,
+                      ),
                     ),
                     const Padding(
                       padding: EdgeInsets.only(left: 5),
