@@ -49,7 +49,9 @@ class StyledMainCardContainer extends StatelessWidget {
               ),
             ],
           ),
-          const StyledPriceCardGrid()
+          const StyledPriceCardGrid(
+            height: 380,
+          )
         ],
       ),
     );

@@ -9,19 +9,23 @@ class Catalog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
         body: Container(
-          padding: const EdgeInsets.all(15),
-          child: const Column(
-            children: [
-              StyledSearchBar(),
-              Padding(
-                padding: EdgeInsets.only(bottom: 10),
-                child: StyledTabController(),
-              ),
-              StyledPriceCardGrid()
-            ],
+      margin: const EdgeInsets.only(top: 60),
+      padding: const EdgeInsets.all(15),
+      child: const Column(
+        children: [
+          StyledSearchBar(),
+          Padding(
+            padding: EdgeInsets.only(bottom: 10),
+            child: StyledTabController(),
           ),
-        ));
+          SizedBox(
+            child: StyledPriceCardGrid(
+              height: 650,
+            ),
+          )
+        ],
+      ),
+    ));
   }
 }
