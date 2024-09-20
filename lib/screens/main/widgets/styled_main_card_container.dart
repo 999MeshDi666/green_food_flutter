@@ -23,30 +23,34 @@ class StyledMainCardContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(12)),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+          Column(
             children: [
-              TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(2))),
-                  ),
-                  child: const Text(
-                    "see more",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold),
-                  )),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                        shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(2))),
+                      ),
+                      child: const Text(
+                        "see more",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold),
+                      )),
+                ],
+              ),
+              const Padding(
+                padding: EdgeInsets.only(bottom: 25),
+                child: StyledSearchBar(),
+              ),
+              const StyledTabController(),
             ],
           ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 25),
-            child: StyledSearchBar(),
-          ),
-          const StyledTabController(),
-          const StyledPriceCardGrid(),
+          const StyledPriceCardGrid()
         ],
       ),
     );

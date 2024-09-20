@@ -7,18 +7,16 @@ class StyledPriceCardGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 500,
-      child: Padding(
-          padding: const EdgeInsets.all(0),
-          child: GridView.count(
-            crossAxisCount: 2,
-            mainAxisSpacing: 40,
-            children: List.generate(10, (index) {
-              return const StyledPriceCard(
-                imageUrl: 'assets/images/apple_juice.png',
-              );
-            }),
-          )),
+      height: 380,
+      child: GridView.count(
+        crossAxisCount: 2,
+        mainAxisSpacing: 40,
+        children: List.generate(10, (index) {
+          return const StyledPriceCard(
+            imageUrl: 'assets/images/apple_juice.png',
+          );
+        }),
+      ),
     );
   }
 }
