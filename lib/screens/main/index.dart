@@ -41,9 +41,7 @@ class Main extends StatelessWidget {
                       //         width: 1,
                       //         color: const Color.fromRGBO(36, 70, 39, 1)),
                       //     borderRadius: BorderRadius.circular(50)),
-                      child: SvgPicture.string(
-                        svgUser,
-                      ),
+                      child: SvgPicture.string(user),
                     ),
                     const Padding(
                       padding: EdgeInsets.only(left: 5),

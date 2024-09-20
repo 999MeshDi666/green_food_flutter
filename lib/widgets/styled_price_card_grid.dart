@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:green_food/screens/main/widgets/styled_price_card.dart';
+import 'package:green_food/widgets/styled_price_card.dart';
 
 class StyledPriceCardGrid extends StatelessWidget {
   const StyledPriceCardGrid({super.key});
