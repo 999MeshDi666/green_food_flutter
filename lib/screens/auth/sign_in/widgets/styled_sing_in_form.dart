@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:green_food/screens/main/index.dart';
+import 'package:green_food/screens/Catalog/index.dart';
 import 'package:green_food/widgets/styled_filled_button.dart';
 import 'package:green_food/screens/auth/widgets/styled_text_form_field.dart';
 
@@ -27,12 +27,10 @@ class _StyledSignInFormState extends State<StyledSignInForm> {
             ),
             StyledFilledButton(
               title: widget.buttonText,
-              backgroundColor: const Color.fromRGBO(65, 112, 67, 1),
-              color: const Color.fromRGBO(255, 255, 255, 1),
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const Main()));
+                      MaterialPageRoute(builder: (context) => const Catalog()));
                 }
               },
             ),

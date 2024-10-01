@@ -38,11 +38,10 @@ class _StyledTextFormFieldState extends State<StyledTextFormField> {
           return null;
         },
         style: const TextStyle(color: Colors.white),
-        cursorColor: Colors.white,
         decoration: InputDecoration(
             filled: true,
-            fillColor: const Color.fromRGBO(65, 112, 67, 1),
-            labelStyle: const TextStyle(color: Colors.white),
+            fillColor: const Color.fromRGBO(233, 233, 233, 1),
+            labelStyle: const TextStyle(color: Color.fromRGBO(70, 70, 70, 1)),
             border: const OutlineInputBorder(),
             focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Color.fromRGBO(36, 70, 39, 1)),
