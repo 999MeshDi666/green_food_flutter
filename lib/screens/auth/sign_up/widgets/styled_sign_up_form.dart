@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:green_food/screens/Catalog/index.dart';
 import 'package:green_food/widgets/styled_filled_button.dart';
 import 'package:green_food/screens/auth/widgets/styled_text_form_field.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -43,7 +44,8 @@ class _StyledSignUpFormState extends State<StyledSignUpForm> {
               title: widget.buttonText,
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  print("submitted");
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Catalog()));
                 }
               },
             ),
