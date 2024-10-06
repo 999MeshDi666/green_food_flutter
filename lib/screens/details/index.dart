@@ -62,9 +62,10 @@ class Details extends StatelessWidget {
           Padding(
               padding: const EdgeInsets.only(bottom: 40, left: 15, right: 15),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   const StyledOrderCounter(),
-                  // StyledFilledButton(title: "Add To Order", onPressed: () {})
+                  StyledFilledButton(title: "Add To Order", onPressed: () {})
                 ],
               ))
         ],

@@ -17,6 +17,7 @@ class StyledFilledButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 60,
       decoration: BoxDecoration(
           border: const Border(
             left: BorderSide(width: 1, color: Color.fromRGBO(36, 70, 39, 1)),
@@ -27,7 +28,6 @@ class StyledFilledButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10)),
       child: FilledButton(
           style: FilledButton.styleFrom(
-            minimumSize: const Size.fromHeight(50),
             backgroundColor: backgroundColor,
             shape: RoundedRectangleBorder(
                 borderRadius:

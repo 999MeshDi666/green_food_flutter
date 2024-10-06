@@ -20,6 +20,7 @@ class _StyledSignUpFormState extends State<StyledSignUpForm> {
     return Form(
         key: _formKey,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const StyledTextFormField(
               labelText: "username",

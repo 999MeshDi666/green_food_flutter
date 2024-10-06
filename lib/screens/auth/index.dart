@@ -33,6 +33,7 @@ class Auth extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(15, 0, 15, 40),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: 20),

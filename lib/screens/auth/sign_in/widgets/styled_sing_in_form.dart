@@ -20,6 +20,7 @@ class _StyledSignInFormState extends State<StyledSignInForm> {
     return Form(
         key: _formKey,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             const StyledTextFormField(
                 labelText: "email",
