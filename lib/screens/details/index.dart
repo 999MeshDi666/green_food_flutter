@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:green_food/widgets/styled_filled_button.dart';
-import 'package:green_food/widgets/styled_order_counter.dart';
+import 'package:green_food/widgets/styled_order_counter/index.dart';
 import 'package:green_food/widgets/styled_headline.dart';
 import 'package:green_food/widgets/styled_image_card.dart';
 
@@ -11,10 +11,10 @@ class Details extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const Column(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               StyledImageCard(
@@ -62,7 +62,10 @@ class Details extends StatelessWidget {
           Padding(
               padding: const EdgeInsets.only(bottom: 40, left: 15, right: 15),
               child: Row(
-                children: [StyledOrderCounter()],
+                children: [
+                  const StyledOrderCounter(),
+                  // StyledFilledButton(title: "Add To Order", onPressed: () {})
+                ],
               ))
         ],
       ),
