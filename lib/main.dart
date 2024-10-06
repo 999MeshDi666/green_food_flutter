@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:green_food/screens/catalog/index.dart';
 import 'package:green_food/screens/auth/index.dart';
 
 void main() {

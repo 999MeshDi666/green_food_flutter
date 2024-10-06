@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:green_food/widgets/styled_filled_button.dart';
 import 'package:green_food/screens/auth/widgets/styled_text_form_field.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class StyledSignUpForm extends StatefulWidget {
   const StyledSignUpForm({super.key, required this.buttonText});
@@ -14,19 +15,30 @@ class _StyledSignUpFormState extends State<StyledSignUpForm> {
 
   @override
   Widget build(BuildContext context) {
+    const iconSize = 20.0;
     return Form(
         key: _formKey,
         child: Column(
           children: [
             const StyledTextFormField(
               labelText: "username",
+              icon: FaIcon(
+                FontAwesomeIcons.userLarge,
+                size: iconSize,
+              ),
             ),
             const StyledTextFormField(
-              labelText: "email",
-            ),
+                labelText: "email",
+                icon: FaIcon(
+                  FontAwesomeIcons.envelopesBulk,
+                  size: iconSize,
+                )),
             const StyledTextFormField(
-              labelText: "password",
-            ),
+                labelText: "password",
+                icon: FaIcon(
+                  FontAwesomeIcons.userLock,
+                  size: iconSize,
+                )),
             StyledFilledButton(
               title: widget.buttonText,
               onPressed: () {
