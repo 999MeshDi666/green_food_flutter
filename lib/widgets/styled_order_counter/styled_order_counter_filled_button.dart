@@ -4,9 +4,11 @@ class StyledOrderCounterFilledButton extends StatelessWidget {
   const StyledOrderCounterFilledButton(
       {super.key,
       required this.text,
+      this.width = 50,
       this.radiusLeft = const Radius.circular(5),
       this.radiusRight = const Radius.circular(5),
       required this.onPressed});
+  final double width;
   final String text;
   final VoidCallback onPressed;
   final Radius radiusLeft;
@@ -14,7 +16,7 @@ class StyledOrderCounterFilledButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 50,
+      width: width,
       child: FilledButton(
           style: FilledButton.styleFrom(
             minimumSize: const Size.fromHeight(50),

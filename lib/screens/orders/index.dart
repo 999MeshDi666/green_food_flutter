@@ -27,6 +27,7 @@ class Orders extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return Dismissible(
                         key: Key(index.toString()),
+                        direction: DismissDirection.endToStart,
                         child: SizedBox(
                           height: 110,
                           child: Card(
@@ -37,21 +38,27 @@ class Orders extends StatelessWidget {
                               color: const Color.fromRGBO(96, 150, 87, 1),
                               child: Center(
                                 child: ListTile(
-                                  leading: Image.asset(
-                                      'assets/images/apple_juice.png'),
-                                  title: const Text(
-                                    'Apple Juice',
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  subtitle: const Text(
-                                    "Price: \$5.00",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
+                                    leading: Image.asset(
+                                        'assets/images/apple_juice.png'),
+                                    title: const Text(
+                                      'Apple Juice',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    subtitle: const Text(
+                                      "Price: \$5.00",
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    trailing: const FittedBox(
+                                      fit: BoxFit.fill,
+                                      child: StyledOrderCounter(
+                                        height: 30,
+                                        width: 30,
+                                      ),
+                                    )),
                               )),
                         ));
                   },
