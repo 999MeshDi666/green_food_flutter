@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:green_food/widgets/styled_price_card_grid/index.dart';
 import 'package:green_food/widgets/styled_search_bar.dart';
 import 'package:green_food/widgets/styled_tab_controller.dart';
-import "package:green_food/widgets/styled_price_card_grid.dart";
 
 class Catalog extends StatelessWidget {
   const Catalog({super.key});
@@ -19,11 +19,7 @@ class Catalog extends StatelessWidget {
             padding: EdgeInsets.only(bottom: 10),
             child: StyledTabController(),
           ),
-          SizedBox(
-            child: StyledPriceCardGrid(
-              height: 650,
-            ),
-          )
+          SizedBox(child: StyledPriceCardGrid(height: 650))
         ],
       ),
     ));

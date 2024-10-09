@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:green_food/screens/details/index.dart';
 
 class StyledPriceCard extends StatelessWidget {
   const StyledPriceCard({super.key, required this.imageUrl});
   final String imageUrl;
   @override
   Widget build(BuildContext context) {
+    void onNavigate() {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const Details()));
+    }
+
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -45,7 +51,7 @@ class StyledPriceCard extends StatelessWidget {
                           SizedBox(
                             height: 30,
                             child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: onNavigate,
                               style: ElevatedButton.styleFrom(
                                 shape: const RoundedRectangleBorder(
                                     borderRadius:

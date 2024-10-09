@@ -10,7 +10,9 @@ class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.white),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -62,7 +64,7 @@ class Details extends StatelessWidget {
           Padding(
               padding: const EdgeInsets.only(bottom: 40, left: 15, right: 15),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const StyledOrderCounter(),
                   StyledFilledButton(title: "Add To Order", onPressed: () {})
