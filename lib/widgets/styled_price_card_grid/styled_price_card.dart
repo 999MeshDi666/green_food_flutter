@@ -19,7 +19,7 @@ class StyledPriceCard extends StatelessWidget {
           child: Card(
             elevation: 5,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(10),
             ),
             child: Container(
               width: 120,
