@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:green_food/screens/orders/widgets/styled_delete_button.dart';
 import 'package:green_food/widgets/styled_filled_button.dart';
 import 'package:green_food/widgets/styled_order_counter/index.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
@@ -27,35 +28,11 @@ class Orders extends StatelessWidget {
                   itemCount: 5,
                   itemBuilder: (context, index) {
                     return Slidable(
-                        endActionPane: ActionPane(
+                        key: const ValueKey(0),
+                        endActionPane: const ActionPane(
+                            motion: BehindMotion(),
                             extentRatio: 0.25,
-                            motion: const BehindMotion(),
-                            dismissible: DismissiblePane(onDismissed: () {}),
-                            children: [
-                              const Spacer(),
-                              Container(
-                                  alignment: Alignment.centerRight,
-                                  child: Container(
-                                      width: 75,
-                                      height: 106,
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Colors.black,
-                                              width: 1,
-                                              style: BorderStyle.solid),
-                                          borderRadius:
-                                              BorderRadius.circular(10)),
-                                      child: SlidableAction(
-                                        onPressed: (context) {
-                                          print("delete");
-                                        },
-                                        backgroundColor:
-                                            Color.fromRGBO(144, 39, 33, 1),
-                                        foregroundColor: Colors.white,
-                                        borderRadius: BorderRadius.circular(10),
-                                        icon: Icons.delete,
-                                      )))
-                            ]),
+                            children: [StyledDeleteButton()]),
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 5),
                           height: 120,
@@ -84,7 +61,7 @@ class Orders extends StatelessWidget {
                                     trailing: const FittedBox(
                                       fit: BoxFit.fill,
                                       child: StyledOrderCounter(
-                                        height: 40,
+                                        height: 38,
                                         width: 34,
                                       ),
                                     )),

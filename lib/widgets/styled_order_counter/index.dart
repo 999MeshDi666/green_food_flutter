@@ -55,6 +55,7 @@ class _StyledOrderCounterState extends State<StyledOrderCounter> {
               child: Center(
                 child: Text(
                   _orderCounter.toString(),
+                  style: const TextStyle(fontSize: 14),
                 ),
               )),
           StyledOrderCounterFilledButton(
