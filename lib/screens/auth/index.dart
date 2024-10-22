@@ -3,7 +3,7 @@ import 'package:green_food/screens/auth/sign_in/index.dart';
 import 'package:green_food/screens/auth/sign_up/index.dart';
 import 'package:green_food/widgets/styled_headline.dart';
 import 'package:green_food/widgets/styled_image_card.dart';
-import 'package:green_food/widgets/styled_filled_button.dart';
+import 'package:green_food/widgets/styled_button.dart';
 
 class Auth extends StatelessWidget {
   const Auth({super.key});

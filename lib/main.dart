@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.openSansTextTheme(Theme.of(context).textTheme),
         useMaterial3: true,
       ),
-      home: const Details(),
+      home: const Orders(),
     );
   }
 }
