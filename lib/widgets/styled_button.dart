@@ -24,10 +24,10 @@ class StyledFilledButton extends StatefulWidget {
 }
 
 class _StyledFilledButtonState extends State<StyledFilledButton> {
-  bool isPressed = false;
+  bool _isPressed = false;
   void onTapPressed() {
     setState(() {
-      isPressed = !isPressed;
+      _isPressed = !_isPressed;
     });
   }
 
@@ -48,13 +48,13 @@ class _StyledFilledButtonState extends State<StyledFilledButton> {
               blurRadius: 0,
               blurStyle: BlurStyle.solid,
               color: widget.backgroundColor,
-              offset: Offset(0, isPressed ? 0 : -4),
+              offset: Offset(0, _isPressed ? 0 : -4),
               spreadRadius: 0,
             ),
           ], borderRadius: BorderRadius.circular(widget.buttonBorderRadius)),
           child: Center(
               child: Padding(
-            padding: EdgeInsets.only(bottom: isPressed ? 0 : 8),
+            padding: EdgeInsets.only(bottom: _isPressed ? 0 : 8),
             child: Text(
               widget.title,
               style: TextStyle(

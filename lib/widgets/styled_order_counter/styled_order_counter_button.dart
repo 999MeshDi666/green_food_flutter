@@ -21,10 +21,10 @@ class StyledOrderCounterFilledButton extends StatefulWidget {
 
 class _StyledOrderCounterFilledButtonState
     extends State<StyledOrderCounterFilledButton> {
-  bool isPressed = false;
+  bool _isPressed = false;
   void onTapPressed() {
     setState(() {
-      isPressed = !isPressed;
+      _isPressed = !_isPressed;
     });
   }
 
@@ -37,7 +37,7 @@ class _StyledOrderCounterFilledButtonState
       child: Container(
           padding: EdgeInsets.zero,
           decoration: BoxDecoration(
-              color: Color.fromRGBO(233, 233, 233, isPressed ? 0.9 : 1),
+              color: Color.fromRGBO(233, 233, 233, _isPressed ? 0.9 : 1),
               borderRadius: BorderRadius.only(
                 topLeft: widget.radiusLeft,
                 topRight: widget.radiusRight,

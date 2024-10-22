@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:green_food/screens/details/index.dart';
 
 class StyledPriceCard extends StatelessWidget {
-  const StyledPriceCard({super.key, required this.imageUrl});
+  const StyledPriceCard(
+      {super.key,
+      required this.imageUrl,
+      required this.tile,
+      required this.subtitle});
   final String imageUrl;
+  final String tile;
+  final String subtitle;
   @override
   Widget build(BuildContext context) {
     void onNavigate() {
