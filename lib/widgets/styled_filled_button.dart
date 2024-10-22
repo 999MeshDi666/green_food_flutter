@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class StyledFilledButton extends StatelessWidget {
+class StyledFilledButton extends StatefulWidget {
   const StyledFilledButton(
       {super.key,
       required this.title,
@@ -8,7 +8,7 @@ class StyledFilledButton extends StatelessWidget {
       this.width = 200,
       this.backgroundColor = const Color.fromRGBO(233, 233, 233, 1),
       this.color = const Color.fromRGBO(41, 41, 41, 1),
-      this.buttonBorderRadius = 10,
+      this.buttonBorderRadius = 8,
       required this.onPressed});
 
   final double height;
@@ -20,32 +20,50 @@ class StyledFilledButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   @override
+  State<StyledFilledButton> createState() => _StyledFilledButtonState();
+}
+
+class _StyledFilledButtonState extends State<StyledFilledButton> {
+  bool isPressed = false;
+  void onTapPressed() {
+    setState(() {
+      isPressed = !isPressed;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-          border: const Border(
-            left: BorderSide(width: 1, color: Color.fromRGBO(36, 70, 39, 1)),
-            top: BorderSide(width: 4, color: Color.fromRGBO(36, 70, 39, 1)),
-            right: BorderSide(width: 1, color: Color.fromRGBO(36, 70, 39, 1)),
-            bottom: BorderSide(width: 1, color: Color.fromRGBO(36, 70, 39, 1)),
-          ),
-          borderRadius: BorderRadius.circular(10)),
-      child: FilledButton(
-          style: FilledButton.styleFrom(
-            backgroundColor: backgroundColor,
-            shape: RoundedRectangleBorder(
-                borderRadius:
-                    BorderRadius.all(Radius.circular(buttonBorderRadius))),
-          ),
-          onPressed: onPressed,
-          child: Text(
-            title,
-            style: TextStyle(
-                color: color, fontWeight: FontWeight.bold, fontSize: 16),
-            softWrap: true,
-          )),
+    return GestureDetector(
+      onTap: widget.onPressed,
+      onTapDown: (details) => onTapPressed(),
+      onTapUp: (details) => onTapPressed(),
+      child: Container(
+          height: widget.height,
+          width: widget.width,
+          decoration: BoxDecoration(boxShadow: [
+            const BoxShadow(
+              color: Color.fromRGBO(36, 70, 39, 1),
+            ),
+            BoxShadow(
+              blurRadius: 0,
+              blurStyle: BlurStyle.solid,
+              color: widget.backgroundColor,
+              offset: Offset(0, isPressed ? 0 : -4),
+              spreadRadius: 0,
+            ),
+          ], borderRadius: BorderRadius.circular(widget.buttonBorderRadius)),
+          child: Center(
+              child: Padding(
+            padding: EdgeInsets.only(bottom: isPressed ? 0 : 8),
+            child: Text(
+              widget.title,
+              style: TextStyle(
+                  color: widget.color,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16),
+              softWrap: true,
+            ),
+          ))),
     );
   }
 }

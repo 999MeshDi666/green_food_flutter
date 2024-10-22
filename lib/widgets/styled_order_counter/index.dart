@@ -49,13 +49,22 @@ class _StyledOrderCounterState extends State<StyledOrderCounter> {
               radiusRight: Radius.zero,
               onPressed: decreaseOrderCounter),
           Container(
-              height: 50,
               width: widget.width,
-              color: const Color.fromRGBO(233, 233, 233, 1),
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(233, 233, 233, 1),
+                border: Border(
+                  left: BorderSide(
+                      width: 0.5, color: Color.fromRGBO(36, 70, 39, 1)),
+                  right: BorderSide(
+                      width: 0.5, color: Color.fromRGBO(36, 70, 39, 1)),
+                ),
+              ),
               child: Center(
                 child: Text(
                   _orderCounter.toString(),
-                  style: const TextStyle(fontSize: 14),
+                  style: const TextStyle(
+                    fontSize: 16,
+                  ),
                 ),
               )),
           StyledOrderCounterFilledButton(
