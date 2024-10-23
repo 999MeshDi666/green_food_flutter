@@ -21,7 +21,14 @@ class StyledPriceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     void onNavigate() {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const Details()));
+          context,
+          MaterialPageRoute(
+              builder: (context) => Details(
+                    title: title,
+                    subtitle: subtitle,
+                    price: price,
+                    imageUrl: imageUrl,
+                  )));
     }
 
     return Stack(

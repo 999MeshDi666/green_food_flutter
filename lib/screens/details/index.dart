@@ -5,7 +5,17 @@ import 'package:green_food/widgets/styled_headline.dart';
 import 'package:green_food/widgets/styled_image_card.dart';
 
 class Details extends StatelessWidget {
-  const Details({super.key});
+  const Details(
+      {super.key,
+      required this.title,
+      required this.subtitle,
+      required this.price,
+      required this.imageUrl});
+
+  final String title;
+  final String subtitle;
+  final String price;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -16,43 +26,39 @@ class Details extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               StyledImageCard(
-                imageUrl: 'assets/images/apple_juice.png',
+                imageUrl: imageUrl,
               ),
               Padding(
-                  padding: EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(15),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Row(
                         children: [
                           StyledHeadline(
-                            text: "Apple juice",
+                            text: title,
                             fontSize: 42,
                           )
                         ],
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(vertical: 10),
-                        child: Row(
-                          children: [
-                            Text(
-                              "Lorem ipsum sit amet dolor Lorem\nipsum sit amet dolor Lorem ipsum\nsit amet dolor Lorem ipsum sit amet\ndolor",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                          ],
-                        ),
-                      ),
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: Text(
+                            subtitle,
+                            softWrap: true,
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600),
+                          )),
                       Row(
                         children: [
                           StyledHeadline(
-                            text: "Price: \$5.00",
+                            text: 'Price: $price',
                             fontSize: 24,
                           )
                         ],
