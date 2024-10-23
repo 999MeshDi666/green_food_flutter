@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class StyledSearchBar extends StatelessWidget {
-  const StyledSearchBar({super.key});
-
+  const StyledSearchBar({super.key, required this.onChangeSearchValue});
+  final ValueChanged<String> onChangeSearchValue;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onChanged: (value) => onChangeSearchValue(value),
       style: const TextStyle(color: Colors.black),
       cursorColor: Colors.black,
       decoration: InputDecoration(

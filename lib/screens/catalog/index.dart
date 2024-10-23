@@ -21,7 +21,7 @@ List<Map<String, String>> catalogList = [
     'imageUrl': 'assets/images/bottle_of_water.png',
   },
   {
-    'title': 'Burger #1',
+    'title': 'Burger №1',
     'price': '\$6.80',
     'subtitle':
         'This delicious burger takes you on a journey to the sea, with every bite offering the calm and serenity of coastal breezes. A perfect fusion of flavors that evokes a seaside escape.',
@@ -29,7 +29,7 @@ List<Map<String, String>> catalogList = [
     'imageUrl': 'assets/images/burger1.png',
   },
   {
-    'title': 'Burger #2',
+    'title': 'Burger №2',
     'price': '\$8.20',
     'subtitle':
         'Discover a rich, adventurous taste with this burger, as it brings the mystery and beauty of the desert to your plate. Each bite captures the essence of untamed wilderness.',
@@ -110,19 +110,31 @@ class Catalog extends StatefulWidget {
 }
 
 class _CatalogState extends State<Catalog> {
-  String currentTab = 'all';
-
+  String _currentTab = 'all';
+  String _itemToSearch = "";
   void setCurrentTab(String tab) {
     setState(() {
-      currentTab = tab;
+      _currentTab = tab;
+    });
+  }
+
+  void onChangeSearchValue(String value) {
+    setState(() {
+      _itemToSearch = value;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    List<Map<String, String>> filteredCatalogList = currentTab != "all"
-        ? catalogList.where((item) => item['type'] == currentTab).toList()
+    List<Map<String, String>> filteredCatalogList = _currentTab != "all"
+        ? catalogList.where((item) => item['type'] == _currentTab).toList()
         : catalogList;
+
+    List<Map<String, String>> searchedCatalogList = _itemToSearch != ""
+        ? filteredCatalogList
+            .where((item) => item["title"]!.contains(_itemToSearch))
+            .toList()
+        : filteredCatalogList;
 
     return Scaffold(
         body: Container(
@@ -130,14 +142,14 @@ class _CatalogState extends State<Catalog> {
       padding: const EdgeInsets.all(15),
       child: Column(
         children: [
-          const StyledSearchBar(),
+          StyledSearchBar(onChangeSearchValue: onChangeSearchValue),
           Padding(
             padding: const EdgeInsets.only(bottom: 10),
             child: StyledTabController(setCurrentTab: setCurrentTab),
           ),
           SizedBox(
               child: StyledPriceCardGrid(
-                  cardList: filteredCatalogList, height: 650))
+                  cardList: searchedCatalogList, height: 650))
         ],
       ),
     ));
