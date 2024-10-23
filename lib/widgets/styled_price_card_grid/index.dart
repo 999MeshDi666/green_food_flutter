@@ -12,8 +12,17 @@ class StyledPriceCardGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: height,
-      child:
-          GridView.count(crossAxisCount: 2, mainAxisSpacing: 40, children: []),
+      child: GridView.count(
+          crossAxisCount: 2,
+          mainAxisSpacing: 40,
+          children: cardList.map((item) {
+            return StyledPriceCard(
+                title: item['title']!,
+                subtitle: item['subtitle']!,
+                price: item['price']!,
+                type: item['type']!,
+                imageUrl: item['imageUrl']!);
+          }).toList()),
     );
   }
 }

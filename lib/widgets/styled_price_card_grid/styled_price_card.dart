@@ -2,14 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:green_food/screens/details/index.dart';
 
 class StyledPriceCard extends StatelessWidget {
-  const StyledPriceCard(
-      {super.key,
-      required this.imageUrl,
-      required this.tile,
-      required this.subtitle});
-  final String imageUrl;
-  final String tile;
+  const StyledPriceCard({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.price,
+    required this.type,
+    required this.imageUrl,
+  });
+
+  final String title;
   final String subtitle;
+  final String price;
+
+  final String type;
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     void onNavigate() {
@@ -35,16 +42,16 @@ class StyledPriceCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Apple Juice',
-                    style: TextStyle(
+                  Text(
+                    title,
+                    style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const Text(
-                    'Price: \$5.00',
-                    style: TextStyle(
+                  Text(
+                    'Price: $price',
+                    style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
                     ),
@@ -82,13 +89,13 @@ class StyledPriceCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: -40,
+          top: -25,
           left: 0,
           right: 0,
           child: Image.asset(
             imageUrl,
             width: 80,
-            height: 80, // Replace with your own image asset path
+            height: 80,
           ),
         ),
       ],
