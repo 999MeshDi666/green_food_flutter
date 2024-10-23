@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:green_food/widgets/styled_price_card_grid/styled_price_card.dart';
 
-//'assets/images/apple_juice.png';
 class StyledPriceCardGrid extends StatelessWidget {
   const StyledPriceCardGrid(
       {super.key, required this.cardList, required this.height});
@@ -14,7 +13,8 @@ class StyledPriceCardGrid extends StatelessWidget {
       height: height,
       child: GridView.count(
           crossAxisCount: 2,
-          mainAxisSpacing: 40,
+          mainAxisSpacing: 60,
+          crossAxisSpacing: 20,
           children: cardList.map((item) {
             return StyledPriceCard(
                 title: item['title']!,
