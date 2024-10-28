@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class StyledDeleteButton extends StatelessWidget {
-  const StyledDeleteButton({super.key});
+  const StyledDeleteButton({super.key, required this.removeOrderedItem});
+
+  final VoidCallback removeOrderedItem;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +16,7 @@ class StyledDeleteButton extends StatelessWidget {
                 color: Colors.black, width: 1, style: BorderStyle.solid),
             borderRadius: BorderRadius.circular(10)),
         child: FilledButton(
-            onPressed: () {},
+            onPressed: removeOrderedItem,
             style: FilledButton.styleFrom(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:green_food/widgets/styled_order_counter/styled_order_counter_button.dart';
 
 class StyledOrderCounter extends StatefulWidget {
-  const StyledOrderCounter({super.key, this.height = 45, this.width = 50});
-
+  const StyledOrderCounter(
+      {super.key, this.height = 45, this.width = 50, this.orderCounter = 1});
+  final int orderCounter;
   final double height;
   final double width;
   @override
@@ -12,6 +13,12 @@ class StyledOrderCounter extends StatefulWidget {
 
 class _StyledOrderCounterState extends State<StyledOrderCounter> {
   int _orderCounter = 1;
+
+  @override
+  void initState() {
+    super.initState();
+    _orderCounter = widget.orderCounter;
+  }
 
   void increaseOrderCounter() {
     if (_orderCounter < 6) {
