@@ -17,6 +17,7 @@ class _StyledSignUpFormState extends State<StyledSignUpForm> {
   @override
   Widget build(BuildContext context) {
     const iconSize = 20.0;
+
     return Form(
         key: _formKey,
         child: Column(
@@ -31,12 +32,16 @@ class _StyledSignUpFormState extends State<StyledSignUpForm> {
             ),
             const StyledTextFormField(
                 labelText: "email",
+                type: "email",
                 icon: FaIcon(
                   FontAwesomeIcons.envelopesBulk,
                   size: iconSize,
                 )),
             const StyledTextFormField(
                 labelText: "password",
+                obscureText: true,
+                autocorrect: false,
+                enableSuggestions: false,
                 icon: FaIcon(
                   FontAwesomeIcons.userLock,
                   size: iconSize,
