@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:green_food/screens/orders/widgets/styled_delete_button.dart';
+import 'package:green_food/screens/orders/widgets/styled_order_list_tile.dart';
 import 'package:green_food/widgets/styled_button.dart';
-import 'package:green_food/widgets/styled_order_counter/index.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:green_food/widgets/styled_empty_data_placeholder.dart';
 
 class Orders extends StatefulWidget {
   const Orders({super.key});
@@ -134,6 +134,22 @@ class _OrdersState extends State<Orders> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    Widget orderContent = orderList.isNotEmpty
+        ? SizedBox(
+            height: 600,
+            child: ListView.builder(
+              itemCount: orderList.length,
+              itemBuilder: (context, index) {
+                final item = orderList[index];
+                return StyledOrderListTile(
+                    orderedItem: item,
+                    removeOrderedItem: () {
+                      removeOrderedItem(index);
+                    });
+              },
+            ),
+          )
+        : const StyledEmptyDataPlaceholder(title: "Empty orders");
     return Scaffold(
         appBar: AppBar(
           title: const Text("Orders"),
@@ -147,61 +163,7 @@ class _OrdersState extends State<Orders> with SingleTickerProviderStateMixin {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SizedBox(
-                height: 600,
-                child: ListView.builder(
-                  itemCount: orderList.length,
-                  itemBuilder: (context, index) {
-                    final item = orderList[index];
-                    return Slidable(
-                        key: ValueKey(item),
-                        endActionPane: ActionPane(
-                            motion: const BehindMotion(),
-                            extentRatio: 0.25,
-                            children: [
-                              StyledDeleteButton(
-                                removeOrderedItem: () {
-                                  removeOrderedItem(index);
-                                },
-                              )
-                            ]),
-                        child: Container(
-                          padding: const EdgeInsets.symmetric(vertical: 5),
-                          height: 120,
-                          child: Card(
-                              elevation: 5,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              color: const Color.fromRGBO(96, 150, 87, 1),
-                              child: Center(
-                                child: ListTile(
-                                    leading: Image.asset(item['imageUrl']),
-                                    title: Text(
-                                      item['title'],
-                                      style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    subtitle: Text(
-                                      item['price'],
-                                      style: const TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    trailing: FittedBox(
-                                      fit: BoxFit.fill,
-                                      child: StyledOrderCounter(
-                                        orderCounter: item['orderCount'],
-                                        height: 38,
-                                        width: 34,
-                                      ),
-                                    )),
-                              )),
-                        ));
-                  },
-                ),
-              ),
+              orderContent,
               StyledFilledButton(title: "Complete Order", onPressed: () => {}),
             ],
           ),
