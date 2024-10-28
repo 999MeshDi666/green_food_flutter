@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:green_food/widgets/styled_empty_data_placeholder.dart';
+
 import 'package:green_food/widgets/styled_price_card_grid/index.dart';
 import 'package:green_food/widgets/styled_search_bar.dart';
 import 'package:green_food/widgets/styled_tab_controller.dart';
@@ -136,6 +138,10 @@ class _CatalogState extends State<Catalog> {
             .toList()
         : filteredCatalogList;
 
+    Widget priceCardContent = searchedCatalogList.isNotEmpty
+        ? StyledPriceCardGrid(cardList: searchedCatalogList, height: 650)
+        : const StyledEmptyDataPlaceholder(title: "Empty catalog");
+
     return Scaffold(
         body: Container(
       margin: const EdgeInsets.only(top: 60),
@@ -147,9 +153,7 @@ class _CatalogState extends State<Catalog> {
             padding: const EdgeInsets.only(bottom: 10),
             child: StyledTabController(setCurrentTab: setCurrentTab),
           ),
-          SizedBox(
-              child: StyledPriceCardGrid(
-                  cardList: searchedCatalogList, height: 650))
+          priceCardContent
         ],
       ),
     ));
