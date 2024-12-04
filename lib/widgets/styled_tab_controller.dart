@@ -18,24 +18,25 @@ class StyledTab extends StatelessWidget {
   }
 }
 
+List<String> tabs = ['All', 'Foods', 'Drinks', 'Snacks'];
+
 class StyledTabController extends StatelessWidget {
-  const StyledTabController({super.key});
+  const StyledTabController({super.key, required this.setCurrentTab});
+  final ValueChanged<String> setCurrentTab;
 
   @override
   Widget build(BuildContext context) {
-    return const DefaultTabController(
+    return DefaultTabController(
       length: 4,
       child: TabBar(
+          onTap: (value) => setCurrentTab(tabs[value].toLowerCase()),
           labelPadding: EdgeInsets.zero,
           indicatorColor: Colors.white,
           indicatorSize: TabBarIndicatorSize.tab,
           dividerHeight: 0,
-          tabs: <Widget>[
-            StyledTab(tabText: "All"),
-            StyledTab(tabText: "Foods"),
-            StyledTab(tabText: "Drinks"),
-            StyledTab(tabText: "Snacks"),
-          ]),
+          tabs: tabs.map((tab) {
+            return StyledTab(tabText: tab);
+          }).toList()),
     );
   }
 }

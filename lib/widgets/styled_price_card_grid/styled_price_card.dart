@@ -2,13 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:green_food/screens/details/index.dart';
 
 class StyledPriceCard extends StatelessWidget {
-  const StyledPriceCard({super.key, required this.imageUrl});
+  const StyledPriceCard({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.price,
+    required this.type,
+    required this.imageUrl,
+  });
+
+  final String title;
+  final String subtitle;
+  final String price;
+
+  final String type;
   final String imageUrl;
   @override
   Widget build(BuildContext context) {
     void onNavigate() {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const Details()));
+          context,
+          MaterialPageRoute(
+              builder: (context) => Details(
+                    title: title,
+                    subtitle: subtitle,
+                    price: price,
+                    imageUrl: imageUrl,
+                  )));
     }
 
     return Stack(
@@ -19,27 +39,26 @@ class StyledPriceCard extends StatelessWidget {
           child: Card(
             elevation: 5,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(10),
             ),
             child: Container(
-              width: 120,
-              height: 110,
-              padding: const EdgeInsets.all(5),
+              height: 140,
+              padding: const EdgeInsets.all(10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Apple Juice',
-                    style: TextStyle(
-                      fontSize: 14,
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const Text(
-                    'Price: \$5.00',
-                    style: TextStyle(
-                      fontSize: 12,
+                  Text(
+                    'Price: $price',
+                    style: const TextStyle(
+                      fontSize: 14,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -49,15 +68,17 @@ class StyledPriceCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           SizedBox(
-                            height: 30,
+                            height: 35,
                             child: ElevatedButton(
                               onPressed: onNavigate,
                               style: ElevatedButton.styleFrom(
+                                overlayColor: WidgetStateColor.resolveWith(
+                                    (states) => Colors.white),
                                 shape: const RoundedRectangleBorder(
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(5))),
-                                backgroundColor: const Color.fromRGBO(
-                                    65, 112, 67, 1), // Button color
+                                backgroundColor:
+                                    const Color.fromRGBO(65, 112, 67, 1),
                               ),
                               child: const Text(
                                 'ORDER',
@@ -76,13 +97,13 @@ class StyledPriceCard extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: -40,
+          top: -50,
           left: 0,
           right: 0,
           child: Image.asset(
             imageUrl,
-            width: 80,
-            height: 80, // Replace with your own image asset path
+            width: 100,
+            height: 100,
           ),
         ),
       ],

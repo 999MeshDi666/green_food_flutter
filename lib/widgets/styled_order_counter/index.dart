@@ -1,15 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:green_food/widgets/styled_order_counter/styled_order_counter_filled_button.dart';
+import 'package:green_food/widgets/styled_order_counter/styled_order_counter_button.dart';
 
 class StyledOrderCounter extends StatefulWidget {
-  const StyledOrderCounter({super.key});
-
+  const StyledOrderCounter(
+      {super.key, this.height = 45, this.width = 50, this.orderCounter = 1});
+  final int orderCounter;
+  final double height;
+  final double width;
   @override
   State<StyledOrderCounter> createState() => _StyledOrderCounterState();
 }
 
 class _StyledOrderCounterState extends State<StyledOrderCounter> {
   int _orderCounter = 1;
+
+  @override
+  void initState() {
+    super.initState();
+    _orderCounter = widget.orderCounter;
+  }
 
   void increaseOrderCounter() {
     if (_orderCounter < 6) {
@@ -30,7 +39,7 @@ class _StyledOrderCounterState extends State<StyledOrderCounter> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 45,
+      height: widget.height,
       decoration: BoxDecoration(
           border: const Border(
             left: BorderSide(width: 1, color: Color.fromRGBO(36, 70, 39, 1)),
@@ -43,19 +52,31 @@ class _StyledOrderCounterState extends State<StyledOrderCounter> {
         children: [
           StyledOrderCounterFilledButton(
               text: "-",
+              width: widget.width,
               radiusRight: Radius.zero,
               onPressed: decreaseOrderCounter),
           Container(
-              height: 50,
-              width: 30,
-              color: const Color.fromRGBO(233, 233, 233, 1),
+              width: widget.width,
+              decoration: const BoxDecoration(
+                color: Color.fromRGBO(233, 233, 233, 1),
+                border: Border(
+                  left: BorderSide(
+                      width: 0.5, color: Color.fromRGBO(36, 70, 39, 1)),
+                  right: BorderSide(
+                      width: 0.5, color: Color.fromRGBO(36, 70, 39, 1)),
+                ),
+              ),
               child: Center(
                 child: Text(
                   _orderCounter.toString(),
+                  style: const TextStyle(
+                    fontSize: 16,
+                  ),
                 ),
               )),
           StyledOrderCounterFilledButton(
               text: "+",
+              width: widget.width,
               radiusLeft: Radius.zero,
               onPressed: increaseOrderCounter)
         ],

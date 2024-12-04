@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "C:/Users/Madi/Desktop/green_food_flutter/windows/flutter"
+    "cmake.sourceDirectory": "C:/Users/Madi/Desktop/green_food_flutter/windows/flutter",
+    "cmake.ignoreCMakeListsMissing": true
 }
