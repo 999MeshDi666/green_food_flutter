@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:green_food/screens/orders/index.dart';
 import 'package:green_food/widgets/styled_button.dart';
 import 'package:green_food/widgets/styled_order_counter/index.dart';
 import 'package:green_food/widgets/styled_headline.dart';
 import 'package:green_food/widgets/styled_image_card.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Details extends StatelessWidget {
   const Details(
@@ -22,6 +24,20 @@ class Details extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 15),
+            child: IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Orders()));
+                },
+                icon: const FaIcon(
+                  FontAwesomeIcons.basketShopping,
+                  size: 25,
+                )),
+          )
+        ],
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
